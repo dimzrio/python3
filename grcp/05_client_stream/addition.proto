@@ -1,0 +1,14 @@
+syntax="proto3";
+package addition;
+
+message AdditionReq{
+    int64 number = 1;
+}
+
+message AdditionResp{
+    int64 number = 1;
+}
+
+service Addition{
+    rpc AdditionStream (stream AdditionReq) returns (AdditionResp){}
+}

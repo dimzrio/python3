@@ -1,0 +1,14 @@
+syntax="proto3";
+package multiplication;
+
+message Multiplication10Request{
+    int64 number = 1;
+}
+
+message Multiplication10Response{
+    int64 number = 1;
+}
+
+service Multiplication{
+    rpc Multiplication10 (Multiplication10Request) returns (stream Multiplication10Response){}
+}

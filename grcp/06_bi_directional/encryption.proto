@@ -1,0 +1,15 @@
+syntax="proto3";
+package encrypt;
+
+message EncryptRequest{
+    string text = 1;
+}
+
+message EncryptResponse{
+    string encrypted = 1;
+    string text = 2;
+}
+
+service Encrypt{
+    rpc md5 (stream EncryptRequest) returns (stream EncryptResponse);
+}

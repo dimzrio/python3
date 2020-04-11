@@ -1,0 +1,24 @@
+syntax="proto3";
+package deployer;
+
+message Exec {
+    string cwd = 1;
+    string command = 2;
+}
+
+message Stdout {
+    string status = 1;
+    string result = 2;
+}
+
+message DeployerRequest{
+    Exec shellExec = 1;
+}
+
+message DeployerResponse{
+    Stdout stdout = 1;
+}
+
+service DeployerTools{
+    rpc ExecCMD (DeployerRequest) returns (DeployerResponse){};
+}
